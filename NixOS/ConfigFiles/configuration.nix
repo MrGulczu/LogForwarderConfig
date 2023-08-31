@@ -90,7 +90,7 @@
       $ModLoad imtcp
       $InputTCPServerRun 514
 
-      $template RemoteLogs,"/var/log/remote_logs/logfile%HOSTNAME%.log"
+      $template RemoteLogs,"/var/log/remote_logs/%HOSTNAME%.log"
       *.* ?RemoteLogs
       & ~
     '';
