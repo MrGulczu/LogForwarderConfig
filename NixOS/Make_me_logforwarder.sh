@@ -38,7 +38,7 @@ do
     read -p "Those are correct? [Y/N]: " yesorno
     if [ "$yesorno" == "Y" ] || [ "$yesorno" == "y" ];
     then
-        isok = false
+        isok=false
     fi
 done
 
