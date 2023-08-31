@@ -21,7 +21,7 @@ nixos-rebuild switch
 cp ConfigFiles/Dockerfile /etc/nixos/WazuhDocker/Dockerfile
 cp ConfigFiles/ossec.conf /etc/nixos/WazuhDocker/ossec.conf
 cp Scripts/entrypoint.sh /etc/nixos/WazuhDocker/entrypoint.sh
-
+echo "Change password for SmartechNixAdmin"
 passwd SmartechNixAdmin
 
 echo "Done"
