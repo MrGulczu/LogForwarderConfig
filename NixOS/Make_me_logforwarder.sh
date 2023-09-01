@@ -2,7 +2,10 @@
 
 #Script will Configure NixOS as well as wazuh agent
 #Create directories
+drawline
 echo "Preparing Environment..."
+drawline
+
 mkdir /var/log/remote_logs
 mkdir /etc/nixos/WazuhDocker
 
@@ -21,10 +24,18 @@ nixos-rebuild switch
 cp ConfigFiles/Dockerfile /etc/nixos/WazuhDocker/Dockerfile
 cp ConfigFiles/ossec.conf /etc/nixos/WazuhDocker/ossec.conf
 cp Scripts/entrypoint.sh /etc/nixos/WazuhDocker/entrypoint.sh
+
+echo "DONE!"
+
+drawline
 echo "Change password for SmartechNixAdmin"
+drawline
+
 passwd SmartechNixAdmin
 
-echo "Done"
+drawline
+echo "Configure Wazuh Agent"
+drawline
 
 #Setup config file for Wazuh Agent 
 OSSEC="/etc/nixos/WazuhDocker/ossec.conf"
@@ -64,8 +75,9 @@ docker volume create wazuhvolume
 cd /etc/nixos/WazuhDocker/
 docker build -t wazuh-agent-container .
 docker run -d --privileged --restart unless-stopped --network host -v /var/log/remote_logs:/var/log/remote_logs -v wazuhvolume:/var/ossec wazuh-agent-container
+
 echo "All Done"
 
-echo "-----------------------------"
+drawline
 echo "Remember to install and configure Twingate connectors!!!!!"
-echo "-----------------------------"
+drawline
