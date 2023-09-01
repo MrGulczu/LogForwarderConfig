@@ -74,7 +74,7 @@ docker volume create wazuhvolume
 #Build and Run Conteiner
 cd /etc/nixos/WazuhDocker/
 docker build -t wazuh-agent-container .
-docker run -d --privileged --restart unless-stopped --network host -v /var/log/remote_logs:/var/log/remote_logs -v wazuhvolume:/var/ossec wazuh-agent-container
+docker run -d --name Wazuh_Agent --privileged --restart unless-stopped --network host -v /var/log/remote_logs:/var/log/remote_logs -v wazuhvolume:/var/ossec wazuh-agent-container
 
 echo "All Done"
 
