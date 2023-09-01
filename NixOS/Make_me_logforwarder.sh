@@ -2,9 +2,9 @@
 
 #Script will Configure NixOS as well as wazuh agent
 #Create directories
-drawline
+stty size | perl -ale 'print "-"x$F[1]'
 echo "Preparing Environment..."
-drawline
+stty size | perl -ale 'print "-"x$F[1]'
 
 mkdir /var/log/remote_logs
 mkdir /etc/nixos/WazuhDocker
@@ -27,15 +27,15 @@ cp Scripts/entrypoint.sh /etc/nixos/WazuhDocker/entrypoint.sh
 
 echo "DONE!"
 
-drawline
+stty size | perl -ale 'print "-"x$F[1]'
 echo "Change password for SmartechNixAdmin"
-drawline
+stty size | perl -ale 'print "-"x$F[1]'
 
 passwd SmartechNixAdmin
 
-drawline
+stty size | perl -ale 'print "-"x$F[1]'
 echo "Configure Wazuh Agent"
-drawline
+stty size | perl -ale 'print "-"x$F[1]'
 
 #Setup config file for Wazuh Agent 
 OSSEC="/etc/nixos/WazuhDocker/ossec.conf"
@@ -78,6 +78,6 @@ docker run -d --privileged --restart unless-stopped --network host -v /var/log/r
 
 echo "All Done"
 
-drawline
+stty size | perl -ale 'print "-"x$F[1]'
 echo "Remember to install and configure Twingate connectors!!!!!"
-drawline
+stty size | perl -ale 'print "-"x$F[1]'
