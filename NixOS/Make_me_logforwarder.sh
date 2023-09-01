@@ -31,7 +31,7 @@ stty size | perl -ale 'print "-"x$F[1]'
 echo "Change password for SmartechNixAdmin"
 stty size | perl -ale 'print "-"x$F[1]'
 
-passwd SmartechNixAdmin
+passwd smartechnixadmin
 
 stty size | perl -ale 'print "-"x$F[1]'
 echo "Configure Wazuh Agent"
