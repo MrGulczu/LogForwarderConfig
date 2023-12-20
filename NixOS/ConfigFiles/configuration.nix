@@ -53,7 +53,7 @@
   console.keyMap = "pl2";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.smartechnixadmin = {
+  users.users.nixadmin = {
     isNormalUser = true;
     description = "NixOs";
     extraGroups = [ "networkmanager" "wheel" ];
