@@ -22,11 +22,19 @@ Welcome to the "LogForwarderConfig" repository! This project provides a comprehe
 
 ## Getting Started
 
-1. Clone this repository to your NixOS machine.
+1. Install NixOS
+   
+3. Add git and Vim packages to NixOS configuration file uder /etc/nixos/configuration.nix
+```Shell
+  environment.systemPackages = with pkgs; [
+  vim
+  wget
+  ];
+```
 
-2. Follow the step-by-step instructions in our documentation to set up the log forwarding system, containers, and user accounts.
+4. Reboot system
 
-3. Customize configurations to match your specific environment, ensuring seamless integration with Wazuh.
+5. Download and run this script
 
 ## Contributions and Feedback
 
