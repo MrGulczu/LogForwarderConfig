@@ -32,10 +32,10 @@ cp Scripts/entrypoint.sh /etc/nixos/WazuhDocker/entrypoint.sh
 echo "DONE!"
 
 stty size | perl -ale 'print "-"x$F[1]'
-echo "Change password for SmartechNixAdmin"
+echo "Change password for NixAdmin"
 stty size | perl -ale 'print "-"x$F[1]'
 
-passwd smartechnixadmin
+passwd nixadmin
 
 stty size | perl -ale 'print "-"x$F[1]'
 echo "Configure Wazuh Agent"
